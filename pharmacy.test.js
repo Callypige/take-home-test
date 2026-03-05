@@ -20,6 +20,10 @@ describe("Pharmacy", () => {
     ["Fervex", 10, 35, 9, 37],
     ["Fervex", 5, 35, 4, 38],
     ["Fervex", 0, 35, -1, 0],
+    // Dafalgan
+    ["Dafalgan", 5, 10, 4, 8],
+    ["Dafalgan", 0, 10, -1, 6],
+    ["Dafalgan", 5, 0, 4, 0],
   ])(
     "%s (expiresIn: %i, benefit: %i) → (expiresIn: %i, benefit: %i)",
     (name, expiresIn, benefit, expectedExpiresIn, expectedBenefit) => {
