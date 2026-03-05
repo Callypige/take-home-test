@@ -49,11 +49,20 @@ const updateFervex = (drug) => {
   }
 };
 
+// Dafalgan degrades in benefit twice as fast as normal drugs
+const updateDafalgan = (drug) => {
+  drug.benefit -= 2;
+  drug.expiresIn -= 1;
+  if (drug.expiresIn < 0) drug.benefit -= 2;
+  clampBenefit(drug);
+};
+
 // Mapping of drug names to their respective update functions
 const DRUG_STRATEGIES = {
   "Herbal Tea": updateHerbalTea,
   "Magic Pill": updateMagicPill,
   "Fervex": updateFervex,
+  "Dafalgan": updateDafalgan,
 };
 
 export class Pharmacy {
